@@ -5,3 +5,12 @@ GET http://localhost:8080/idat/codigo
 
 ###
 GET http://localhost:8080/idat/nombre-completo
+
+###
+GET https://ec2-diego.onrender.com/
+
+###
+GET https://ec2-diego.onrender.com/idat/codigo
+
+###
+GET https://ec2-diego.onrender.com/idat/nombre-completo
