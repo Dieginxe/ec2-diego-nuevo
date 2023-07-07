@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-// imports for use List, Map, String and Object
 import java.lang.String;
+
+
 
 
 @Controller	
@@ -20,13 +21,10 @@ public class MainController {
 	@Autowired 
 	private UserRepository userRepository;
 
-		@GetMapping(path="/listar")
-	public @ResponseBody Iterable<User> listar() {
-		return userRepository.findAll();
-	}
+	
 
 	@PostMapping(path="/nuevo") 
-	public @ResponseBody String nuevo (@RequestParam String name
+	public @ResponseBody String addNewUser (@RequestParam String name
 			, @RequestParam Integer credito) {
 		User n = new User();
 		n.setName(name);
@@ -36,14 +34,17 @@ public class MainController {
 	}
 
 	@DeleteMapping(path="/eliminar")
-	public @ResponseBody String eliminar (@RequestParam Integer id) {
+	public @ResponseBody String delUser (@RequestParam Integer id) {
 		User n = new User();
 		n.setId(id);
 		userRepository.delete(n);
 		return "Deleted";
 	}
 
-
+	@GetMapping(path="/listar")
+	public @ResponseBody Iterable<User> getAllUsers() {
+		return userRepository.findAll();
+	}
 
 
 }

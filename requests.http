@@ -1,4 +1,4 @@
-@subdominio = sub-dominio-render
+@subdominio = ec2-diego
 
 GET http://localhost:8080/
  
@@ -37,8 +37,8 @@ GET https://{{subdominio}}.onrender.com/api/curso/listar HTTP/1.1
 POST https://{{subdominio}}.onrender.com/api/curso/nuevo HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
-nombre=DSW1
-&creditos=2
+name=web
+&credito=2
 
 ###
 # 6: Eliminar Curso
